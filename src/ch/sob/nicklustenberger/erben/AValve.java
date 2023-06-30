@@ -12,6 +12,6 @@ public abstract class AValve {
         this.valveNumber = valveNumber;
     }
 
-    public abstract float function(float inputA);
+    public abstract float function(float inputA, float inputB);
 
 }
