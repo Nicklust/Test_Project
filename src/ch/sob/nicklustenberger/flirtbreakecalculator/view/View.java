@@ -18,8 +18,9 @@ public class View extends JFrame {
         super ("Flirt break calculator");
         this.model = model;
         JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout());
-        sevenStep = new JSlider(SwingConstants.HORIZONTAL, 0, 7, 0);
+        panel.setLayout(new GridLayout(0,2));
+        JLabel sevenStepLabel = new JLabel("Siebenstufen Ventil");
+        sevenStep = new JSlider(SwingConstants.HORIZONTAL, 0, 8, 0);
         sevenStep.setMajorTickSpacing(1);
         sevenStep.setPaintTicks(true);
         sevenStep.setPaintLabels(true);
@@ -42,6 +43,13 @@ public class View extends JFrame {
         mainPressure.setEditable(false);
         panel.add(mainPressure);
         add(panel);
+        JTextField controlValve = new JTextField("0.000 Bar");
+        model.addControlValvePressureListener(new IStringListener() {
+            @Override
+            public void onChanged(String value) { controlValve.setText(value);}
+        });
+        controlValve.setEditable(false);
+        panel.add(controlValve);
         setSize(400, 300);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
