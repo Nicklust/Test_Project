@@ -1,5 +1,5 @@
 package ch.sob.nicklustenberger.flirtbrakecalculator.view;
 
-public interface ISliderListener {
+public interface IIntListener {
     void onChanged (int value);
 }

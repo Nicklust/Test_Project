@@ -7,18 +7,19 @@ import java.awt.*;
 
 public class View extends JFrame {
     private Model model;
-    public SevenStepView sevenStep;
+    public InputView sevenStep;
+    public OutputView sevenStepControlPressure;
 
     public View (Model model){
         super ("Flirt brake calculator");
         this.model = model;
+        sevenStep = new InputView("Siebenstufen Hebel", 0, 8, 0, model.sevenStepSignal);
+        sevenStepControlPressure = new OutputView("Steuerdruck Siebenstufen Ventil", 0.00 + " Bar", model.sevenStepControl);
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(0,1));
         add(panel);
-        sevenStep = new SevenStepView();
         panel.add(sevenStep);
-        panel.add(new MainPressureView(model));
-        panel.add(new ControlValveView(model));
+        panel.add(sevenStepControlPressure);
         setSize(400, 300);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
