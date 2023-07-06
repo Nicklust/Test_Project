@@ -17,6 +17,10 @@ public class SevenStepValve {
         });
     }
 
+    public SevenStepValve(){
+
+    }
+
     public float getControlPressure (int step){
         sevenStepControlPressure = (3.5f / 7.0f) * step;
 

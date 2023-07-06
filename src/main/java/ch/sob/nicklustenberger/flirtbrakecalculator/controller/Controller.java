@@ -10,7 +10,7 @@ public class Controller {
     private View view;
     private SevenStepValve sevenStepValve;
     public Controller (Model model, View view){
-        this.model =model;
+        this.model = model;
         this.view = view;
         sevenStepValve = new SevenStepValve(model.sevenStepSignal, model.sevenStepControl);
     }

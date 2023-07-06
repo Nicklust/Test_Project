@@ -19,7 +19,6 @@ public class Pressure {
 
         int commaIndex = pressureInString.indexOf(".");
         pressureText = pressureInString.subSequence(0, commaIndex + 2) + " Bar";
-        System.out.println(pressureText);
 
         for (IFloatListener floatListener : pressureListeners) {
             floatListener.onChanged(pressure);
