@@ -13,7 +13,7 @@ public class Controller implements ISliderListener {
     public Controller (Model model, View view){
         this.model =model;
         this.view = view;
-        view.addSevenStepListener(this);
+        view.sevenStep.addListener(this);
     }
     @Override
     public void onChanged(int value) {
