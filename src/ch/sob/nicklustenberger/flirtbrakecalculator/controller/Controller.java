@@ -9,7 +9,7 @@ public class Controller implements ISliderListener {
     private Model model;
     private View view;
     private float brakepipe;
-    private ControlValve controValve = new ControlValve();
+    private ControlValve controlValve = new ControlValve();
     public Controller (Model model, View view){
         this.model =model;
         this.view = view;
@@ -31,9 +31,7 @@ public class Controller implements ISliderListener {
         pressureInString = ""+pressureInString.subSequence(0, length);
         model.setMainPressureText(pressureInString + " Bar");
 
-        controValve.setBrakePipe(brakepipe);
-        controValve.update();
-        String controlValveInString = "" + controValve.getControlPressure();
+        String controlValveInString = "" + controlValve.getControlPressure(brakepipe);
         int lengthControlValve = 4;
         if (controlValveInString.length() < 4){
             lengthControlValve = controlValveInString.length();
