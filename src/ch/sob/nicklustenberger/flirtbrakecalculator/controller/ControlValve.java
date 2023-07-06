@@ -1,4 +1,4 @@
-package ch.sob.nicklustenberger.flirtbreakecalculator.controller;
+package ch.sob.nicklustenberger.flirtbrakecalculator.controller;
 
 public class ControlValve {
 

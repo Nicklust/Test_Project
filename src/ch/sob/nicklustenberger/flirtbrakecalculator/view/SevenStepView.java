@@ -1,4 +1,4 @@
-package ch.sob.nicklustenberger.flirtbreakecalculator.view;
+package ch.sob.nicklustenberger.flirtbrakecalculator.view;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

@@ -1,4 +1,4 @@
-package ch.sob.nicklustenberger.flirtbreakecalculator.model;
+package ch.sob.nicklustenberger.flirtbrakecalculator.model;
 
 import java.util.ArrayList;
 import java.util.List;

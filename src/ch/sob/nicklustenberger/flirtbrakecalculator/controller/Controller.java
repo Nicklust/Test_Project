@@ -1,8 +1,8 @@
-package ch.sob.nicklustenberger.flirtbreakecalculator.controller;
+package ch.sob.nicklustenberger.flirtbrakecalculator.controller;
 
-import ch.sob.nicklustenberger.flirtbreakecalculator.model.Model;
-import ch.sob.nicklustenberger.flirtbreakecalculator.view.ISliderListener;
-import ch.sob.nicklustenberger.flirtbreakecalculator.view.View;
+import ch.sob.nicklustenberger.flirtbrakecalculator.model.Model;
+import ch.sob.nicklustenberger.flirtbrakecalculator.view.ISliderListener;
+import ch.sob.nicklustenberger.flirtbrakecalculator.view.View;
 
 public class Controller implements ISliderListener {
 

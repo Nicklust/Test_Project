@@ -1,8 +1,8 @@
-package ch.sob.nicklustenberger.flirtbreakecalculator;
+package ch.sob.nicklustenberger.flirtbrakecalculator;
 
-import ch.sob.nicklustenberger.flirtbreakecalculator.controller.Controller;
-import ch.sob.nicklustenberger.flirtbreakecalculator.model.Model;
-import ch.sob.nicklustenberger.flirtbreakecalculator.view.View;
+import ch.sob.nicklustenberger.flirtbrakecalculator.controller.Controller;
+import ch.sob.nicklustenberger.flirtbrakecalculator.model.Model;
+import ch.sob.nicklustenberger.flirtbrakecalculator.view.View;
 
 public class Main {
 

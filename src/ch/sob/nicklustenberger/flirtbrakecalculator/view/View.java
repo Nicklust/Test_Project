@@ -1,14 +1,9 @@
-package ch.sob.nicklustenberger.flirtbreakecalculator.view;
+package ch.sob.nicklustenberger.flirtbrakecalculator.view;
 
-import ch.sob.nicklustenberger.flirtbreakecalculator.model.IStringListener;
-import ch.sob.nicklustenberger.flirtbreakecalculator.model.Model;
+import ch.sob.nicklustenberger.flirtbrakecalculator.model.Model;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class View extends JFrame {
     private Model model;
