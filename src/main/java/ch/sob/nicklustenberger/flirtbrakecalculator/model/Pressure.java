@@ -1,5 +1,6 @@
 package ch.sob.nicklustenberger.flirtbrakecalculator.model;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +14,16 @@ public class Pressure {
     private List<IStringListener> pressureTextListeners = new ArrayList<>();
 
     public void setPressure(float pressure) {
+
+        if (pressure == this.pressure){
+            return;
+        }
+
         this.pressure = pressure;
 
-        String pressureInString = "" + pressure;
+        DecimalFormat df = new DecimalFormat("0.000");
 
-        int commaIndex = pressureInString.indexOf(".");
-        pressureText = pressureInString.subSequence(0, commaIndex + 2) + " Bar";
+        pressureText = df.format(pressure) + " Bar";
 
         for (IFloatListener floatListener : pressureListeners) {
             floatListener.onChanged(pressure);
@@ -29,11 +34,11 @@ public class Pressure {
     }
 
 
-    public void addPressureListeners(IFloatListener listener) {
+    public void addPressureListener(IFloatListener listener) {
         pressureListeners.add(listener);
     }
 
-    public void addPressureTextListeners(IStringListener listener) {
+    public void addPressureTextListener(IStringListener listener) {
         pressureTextListeners.add(listener);
     }
 }

@@ -20,7 +20,7 @@ public class OutputView extends JPanel {
         add(label);
         add(textField);
         setBorder(new LineBorder(Color.BLACK));
-        pressure.addPressureTextListeners(new IStringListener() {
+        pressure.addPressureTextListener(new IStringListener() {
             @Override
             public void onChanged(String value) {
                 textField.setText(value);

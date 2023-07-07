@@ -1,20 +1,28 @@
 package ch.sob.nicklustenberger.flirtbrakecalculator.controller;
 
+import ch.sob.nicklustenberger.flirtbrakecalculator.model.IFloatListener;
+import ch.sob.nicklustenberger.flirtbrakecalculator.model.Pressure;
+
 public class ControlValve {
 
-    private float brakePipe = 0;
-    private float controlPressure = 0;
 
-    public float getControlPressure(float brakePipe){
-        float middleValue = (float) ((3.8 / 2.2) * brakePipe);
-        controlPressure = (float) (3.8 - ((middleValue) - 4.5));
+    public ControlValve(Pressure mainPressure, Pressure brakeCylinderPressure){
+        mainPressure.addPressureListener(new IFloatListener() {
+            @Override
+            public void onChanged(float value) {
+                brakeCylinderPressure.setPressure(getControlPressure(value));
+            }
+        });
 
-        if (controlPressure <= 0) {
-            controlPressure = 0;
-        }
-        if (controlPressure >= 3.8) {
-            controlPressure = 3.8F;
-        }
-        return controlPressure;
+    }
+
+    public ControlValve(){
+
+    }
+
+    public float getControlPressure(float mainPressure){
+        float result = mainPressure >= 4.75 ? 0 : (float) (8.2-((8.2/4.75) * mainPressure));
+        return result >= 4.0 ? 4.0f : result;
+
     }
 }

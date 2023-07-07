@@ -21,7 +21,7 @@ public class DigitalValue {
     }
 
 
-    public void addDigitalValueListeners(IIntListener listener) {
+    public void addDigitalValueListener(IIntListener listener) {
         listeners.add(listener);
     }
 

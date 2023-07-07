@@ -6,10 +6,9 @@ import ch.sob.nicklustenberger.flirtbrakecalculator.view.IIntListener;
 
 public class SevenStepValve {
 
-    private float sevenStepControlPressure;
 
     public SevenStepValve (DigitalValue input, Pressure output){
-        input.addDigitalValueListeners(new IIntListener() {
+        input.addDigitalValueListener(new IIntListener() {
             @Override
             public void onChanged(int value) {
                 output.setPressure (getControlPressure(value));
@@ -22,12 +21,12 @@ public class SevenStepValve {
     }
 
     public float getControlPressure (int step){
-        sevenStepControlPressure = (3.5f / 7.0f) * step;
+        //if (step == 8){
+        //    return 0;
+        //}
+//
+        //return (3.5f / 7.0f) * step;
 
-        if (step == 8){
-            sevenStepControlPressure = 0;
-        }
-
-        return sevenStepControlPressure;
+        return step == 8 ? 9.722f : (3.5f / 7.0f) * step;
     }
 }
