@@ -14,6 +14,9 @@ public class Model {
     public Pressure brakeControl = new Pressure();
     public Pressure load1 = new Pressure();
     public Pressure load2 = new Pressure();
+    public Pressure load3 = new Pressure();
+    public Pressure load4 = new Pressure();
+    public Pressure load5 = new Pressure();
     public Pressure brake = new Pressure();
 
 }
