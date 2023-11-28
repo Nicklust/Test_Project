@@ -1,6 +1,5 @@
 package ch.sob.nicklustenberger.flirtbrakecalculator.view;
 
-import ch.sob.nicklustenberger.flirtbrakecalculator.model.DigitalValue;
 import ch.sob.nicklustenberger.flirtbrakecalculator.model.IStringListener;
 import ch.sob.nicklustenberger.flirtbrakecalculator.model.Pressure;
 
@@ -22,14 +21,13 @@ public class PressureInputView extends JPanel {
 
         JTextField sliderValue = new JTextField();
         sliderValue.setEditable(false);
-        sliderValue.setFont(new Font(Font.MONOSPACED, Font.PLAIN,  20));
+        sliderValue.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));
         output.addPressureTextListener(new IStringListener() {
             @Override
             public void onChanged(String value) {
                 sliderValue.setText(value + "");
             }
         });
-
 
         JLabel title = new JLabel(name);
         int sliderMax = ((int) ((((double) maxPressure) - ((double) minPressure)) * ((double) stepsPerBar)));
@@ -57,7 +55,24 @@ public class PressureInputView extends JPanel {
             }
         });
 
-
         setBorder(new LineBorder(Color.BLACK));
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Pressure Input View");
+
+
+        PressureInputView pressureInputView1 = new PressureInputView("Pressure 1", 0, 10, 5, 100, new Pressure());
+        PressureInputView pressureInputView2 = new PressureInputView("Pressure 2", 0, 10, 2, 100, new Pressure());
+
+
+        frame.setLayout(new GridLayout(2, 1));
+        frame.add(pressureInputView1);
+        frame.add(pressureInputView2);
+
+
+        frame.setSize(400, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
